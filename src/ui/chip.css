@@ -1,0 +1,10 @@
+.chip-group { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-toggle {
+  border: 1px solid var(--w-border-strong); border-radius: var(--w-r-pill); background: var(--w-surface);
+  color: var(--w-ink-2); font: inherit; font-size: var(--w-text-sm); font-weight: 500;
+  padding: 7px 12px; min-height: 36px; cursor: pointer;
+  transition: background-color var(--w-dur-fast) ease, color var(--w-dur-fast) ease, border-color var(--w-dur-fast) ease;
+}
+.chip-toggle:hover { background: var(--w-sunk); }
+.chip-toggle[aria-pressed="true"] { background: var(--w-accent-soft); color: var(--w-accent-on-soft); border-color: transparent; }
+.chip-toggle:disabled { opacity: .55; cursor: not-allowed; }

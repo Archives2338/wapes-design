@@ -1,6 +1,6 @@
 {
   "name": "@wapes/design",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Tokens, base y componentes de interfaz de Wapes. Una sola copia para el dashboard, el admin y la extensión.",
   "repository": "github:Archives2338/wapes-design",
   "license": "UNLICENSED",

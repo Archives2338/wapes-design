@@ -6,13 +6,16 @@ type Variant = 'solid' | 'ghost' | 'quiet' | 'danger' | 'plain';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
+  /** 'sm': 36px de alto, para filas y barras de herramientas densas. */
+  size?: 'md' | 'sm';
   children: ReactNode;
 }
 
-export function Button({ variant = 'plain', className = '', type = 'button', children, ...rest }: Props) {
+export function Button({ variant = 'plain', size = 'md', className = '', type = 'button', children, ...rest }: Props) {
   const v = variant === 'plain' ? '' : ` btn--${variant}`;
+  const s = size === 'sm' ? ' btn--sm' : '';
   return (
-    <button type={type} className={`btn${v} ${className}`.trim()} {...rest}>
+    <button type={type} className={`btn${v}${s} ${className}`.trim()} {...rest}>
       {children}
     </button>
   );
