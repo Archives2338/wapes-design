@@ -1,0 +1,25 @@
+.bars { position: relative; height: 170px; border-bottom: 1px solid var(--w-border);
+  display: flex; align-items: flex-end; gap: 6px; }
+.bars::before, .bars::after {
+  content: ""; position: absolute; left: 0; right: 0;
+  border-top: 1px dashed var(--w-track);
+}
+.bars::before { top: 0; } .bars::after { top: 50%; }
+.bar { position: relative; flex: 1 1 0; min-width: 0; height: 100%;
+  display: flex; align-items: flex-end; }
+.bar__fill { width: 100%; border-radius: 4px 4px 0 0; background: var(--w-accent); }
+.bar__tip {
+  position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+  margin-bottom: 8px; background: var(--w-ink); color: var(--w-bg);
+  font-size: var(--w-text-xs); white-space: nowrap; padding: 4px 8px;
+  border-radius: 6px; pointer-events: none; opacity: 0; transition: opacity .12s ease;
+}
+.bar:hover .bar__tip, .bar:focus-within .bar__tip, .bar:focus .bar__tip { opacity: 1; }
+.axis { display: flex; justify-content: space-between; margin-top: 8px;
+  font-size: var(--w-text-xs); color: var(--w-ink-3); }
+
+/* Charts SVG compactos (Charts.tsx) */
+.spark { width: 100%; display: block; }
+.donut { flex-shrink: 0; }
+.donut__total { font: 600 15px var(--w-font); fill: var(--w-ink); }
+.donut__caption { font: 500 6.5px var(--w-font); fill: var(--w-ink-3); letter-spacing: .06em; text-transform: uppercase; }

@@ -1,0 +1,13 @@
+.scrim--center { align-items: center; padding: 24px; }
+.dialog {
+  width: 100%; max-width: 440px;
+  background: var(--w-surface); border: 1px solid var(--w-border);
+  border-radius: var(--w-r-xl); box-shadow: var(--w-shadow-modal);
+  display: flex; flex-direction: column; max-height: calc(100vh - 48px);
+}
+.dialog__head { display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 16px 16px 12px 22px; }
+.dialog__title { font-size: var(--w-text-lg); font-weight: 600; letter-spacing: -.012em; }
+.dialog__body { padding: 0 22px 20px; overflow-y: auto; font-size: var(--w-text-base); }
+.dialog__foot { display: flex; justify-content: flex-end; gap: 8px; flex-wrap: wrap;
+  padding: 14px 22px 18px; border-top: 1px solid var(--w-border); }

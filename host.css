@@ -1,0 +1,182 @@
+/* GENERADO desde tokens.css por scripts/make-host.mjs — no editar a mano.
+   Mismos tokens sobre :host para montar el panel en un Shadow DOM.
+   El tema del panel sigue al de WhatsApp Web: quien monta pone data-theme
+   en el host según lo que detecte ahí, no según el dashboard. */
+/* ============================================================
+   Wapes — Design tokens
+   Única fuente de verdad del color, la forma y el movimiento.
+
+   Lo consumen (o lo consumirán) tres superficies distintas:
+     1. El panel dentro de WhatsApp Web (extensión)
+     2. El dashboard web de la extensión
+     3. Wapes Cloud
+
+   Por eso vive en su propio archivo y no dentro de un componente.
+   Si cambias un valor aquí, cambia en las tres. Si lo copias y
+   pegas en cada proyecto, en seis meses tendrás tres verdes.
+
+   REGLA DE ORO: el verde es señal, no identidad. Solo aparece
+   cuando significa algo — estado conectado, dato medido, acción
+   primaria, confirmación. El ítem activo de navegación NO es verde.
+   ============================================================ */
+
+:host {
+  /* ── Superficies ─────────────────────────────────────────── */
+  --w-bg:            #FBFAF7;  /* fondo de la app, crema */
+  --w-surface:       #FFFFFF;  /* cards, modal */
+  --w-sunk:          #F2F0E7;  /* nav activo, chips de ícono, inputs */
+  --w-track:         #EFEDE4;  /* canal vacío de medidores */
+
+  /* ── Tinta ───────────────────────────────────────────────── */
+  --w-ink:           #22251B;  /* texto principal */
+  --w-ink-2:         #55594C;  /* texto secundario */
+  --w-ink-3:         #6E7264;  /* etiquetas, captions */
+
+  /* ── Bordes ──────────────────────────────────────────────── */
+  --w-border:        #E6E3D9;  /* hairline por defecto */
+  --w-border-strong: #D5D1C4;  /* controles interactivos */
+
+  /* ── Acento ──────────────────────────────────────────────── */
+  --w-accent:        #15663A;  /* texto, íconos, acciones, barras */
+  --w-accent-bright: #1E8A4E;  /* solo puntos de estado "en vivo" */
+  --w-accent-soft:   #E9F0E9;  /* fondo de pills */
+  --w-accent-on-soft:#15663A;  /* texto sobre accent-soft */
+
+  /* ── Estados ─────────────────────────────────────────────── */
+  --w-warn:          #8A5A12;
+  --w-warn-soft:     #FAF6EC;
+  --w-danger:        #8C3A2E;
+  --w-danger-border: #C9A49D;
+
+  /* ── Botón sólido (se invierte solo entre temas) ──────────── */
+  --w-btn-solid-bg:  #22251B;
+  --w-btn-solid-ink: #FBFAF7;
+
+  /* ── Profundidad ─────────────────────────────────────────── */
+  --w-scrim:        rgba(20, 23, 16, .30);
+  --w-shadow-pop:   0 8px 28px rgba(20, 23, 16, .10);
+  --w-shadow-modal: 0 20px 60px rgba(20, 23, 16, .22);
+
+  /* ── Forma ───────────────────────────────────────────────── */
+  --w-r-sm:   8px;    /* botones, inputs */
+  --w-r-md:  10px;    /* chips de ícono, filas */
+  --w-r-lg:  12px;    /* cards */
+  --w-r-xl:  16px;    /* modal */
+  --w-r-pill: 999px;
+
+  /* ── Tipografía ──────────────────────────────────────────── */
+  /* Noto Sans Devanagari va detrás: solo cubre los glifos de hindi que Figtree no tiene. */
+  --w-font: 'Figtree', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  --w-text-xs:  11.5px;  /* captions, th */
+  --w-text-sm:  12.5px;  /* etiquetas, texto secundario */
+  --w-text-base:13.5px;  /* cuerpo */
+  --w-text-md:  14px;    /* h2 */
+  --w-text-lg:  16.5px;  /* título de modal */
+  --w-text-xl:  19px;    /* h1 */
+  --w-text-stat:23px;    /* número grande de card */
+  --w-leading:  1.55;
+
+  /* ── Movimiento ──────────────────────────────────────────── */
+  --w-ease: cubic-bezier(.2, .8, .3, 1);
+  --w-dur-fast: .15s;
+  --w-dur-base: .2s;
+  --w-dur-modal: .22s;
+}
+
+/* ============================================================
+   TEMA OSCURO
+
+   NO es el claro invertido. Tres decisiones deliberadas:
+
+   1. El fondo conserva el sesgo cálido del crema (#121310, no un
+      gris azulado). Si el claro es crema y el oscuro es gris frío,
+      parecen dos productos distintos.
+   2. El verde se vuelve a elegir, no se reutiliza. #15663A sobre
+      fondo oscuro da ~1.5:1 — ilegible. #45A86E llega a 6.3:1.
+   3. El texto claro no es blanco puro. #FFFFFF sobre negro produce
+      halo y cansa a los minutos.
+
+   Si agregas un token nuevo, defínelo en los DOS bloques oscuros
+   de abajo. Olvidar uno deja un color del tema claro colgado.
+   ============================================================ */
+
+/* Elección explícita del usuario */
+:host([data-theme="dark"]) {
+  --w-bg:            #121310;
+  --w-surface:       #1A1C17;
+  --w-sunk:          #23261F;
+  --w-track:         #2A2E25;
+
+  --w-ink:           #EDEBE3;
+  --w-ink-2:         #AFB3A5;
+  --w-ink-3:         #8B8F82;
+
+  --w-border:        #2A2E25;
+  --w-border-strong: #3A3F33;
+
+  --w-accent:        #45A86E;
+  --w-accent-bright: #5CC98A;
+  --w-accent-soft:   #16301F;
+  --w-accent-on-soft:#6FCB95;
+
+  --w-warn:          #C9922F;
+  --w-warn-soft:     #241E12;
+  --w-danger:        #D97A68;
+  --w-danger-border: #5A332C;
+
+  --w-btn-solid-bg:  #EDEBE3;
+  --w-btn-solid-ink: #121310;
+
+  --w-scrim:        rgba(0, 0, 0, .58);
+  --w-shadow-pop:   0 8px 28px rgba(0, 0, 0, .45);
+  --w-shadow-modal: 0 20px 60px rgba(0, 0, 0, .55);
+}
+
+/* Preferencia del sistema, salvo que el usuario haya pedido claro */
+@media (prefers-color-scheme: dark) {
+  :host(:not([data-theme="light"])) {
+    --w-bg:            #121310;
+    --w-surface:       #1A1C17;
+    --w-sunk:          #23261F;
+    --w-track:         #2A2E25;
+
+    --w-ink:           #EDEBE3;
+    --w-ink-2:         #AFB3A5;
+    --w-ink-3:         #8B8F82;
+
+    --w-border:        #2A2E25;
+    --w-border-strong: #3A3F33;
+
+    --w-accent:        #45A86E;
+    --w-accent-bright: #5CC98A;
+    --w-accent-soft:   #16301F;
+    --w-accent-on-soft:#6FCB95;
+
+    --w-warn:          #C9922F;
+    --w-warn-soft:     #241E12;
+    --w-danger:        #D97A68;
+    --w-danger-border: #5A332C;
+
+    --w-btn-solid-bg:  #EDEBE3;
+    --w-btn-solid-ink: #121310;
+
+    --w-scrim:        rgba(0, 0, 0, .58);
+    --w-shadow-pop:   0 8px 28px rgba(0, 0, 0, .45);
+    --w-shadow-modal: 0 20px 60px rgba(0, 0, 0, .55);
+  }
+}
+
+/* ============================================================
+   USO DENTRO DE WHATSAPP WEB
+
+   El panel de la extensión se inyecta en una página ajena cuyo CSS
+   no controlas y que cambia sin avisar. Monta el panel en un Shadow
+   DOM y redeclara los tokens sobre el host, porque las variables de
+   :root no cruzan la frontera del shadow root:
+
+     :host { --w-bg: #FBFAF7;  ... }
+     :host([data-theme="dark"]) { --w-bg: #121310; ... }
+
+   Y ojo: el tema del panel debe seguir al de WhatsApp Web, no al
+   del dashboard. Un panel claro sobre un WhatsApp oscuro se ve roto.
+   ============================================================ */

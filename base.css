@@ -1,0 +1,50 @@
+/* Base global: reset mínimo, tipografía, foco y movimiento.
+   Los valores salen de tokens.css; aquí no va ningún hex. */
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--w-bg);
+  color: var(--w-ink);
+  font-family: var(--w-font);
+  font-size: var(--w-text-base);
+  line-height: var(--w-leading);
+  -webkit-font-smoothing: antialiased;
+}
+#root { min-height: 100%; }
+
+a { color: var(--w-accent); text-decoration: none; }
+a:hover { filter: brightness(1.15); }
+
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: var(--w-text-xl); font-weight: 600; letter-spacing: -.016em; line-height: 1.3; }
+h2 { font-size: var(--w-text-md); font-weight: 600; }
+h3 { font-size: var(--w-text-base); font-weight: 600; }
+
+/* Todo número que se compare entre filas lleva .num */
+.num { font-variant-numeric: tabular-nums; letter-spacing: -.012em; }
+.muted { color: var(--w-ink-3); }
+.sub { font-size: var(--w-text-sm); color: var(--w-ink-3); }
+.hr { height: 1px; background: var(--w-border); border: 0; margin: 0; }
+
+:focus-visible { outline: 2px solid var(--w-accent); outline-offset: 2px; border-radius: 4px; }
+
+svg { flex-shrink: 0; }
+
+button { font: inherit; color: inherit; }
+
+/* ── Movimiento ─────────────────────────────────────────────── */
+@keyframes w-fade-in { from { opacity: 0 } to { opacity: 1 } }
+@keyframes w-rise   { from { opacity: 0; transform: translateY(8px) scale(.985) }
+                      to   { opacity: 1; transform: translateY(0) scale(1) } }
+@keyframes w-menu-in { from { opacity: 0; transform: translateY(6px) }
+                       to   { opacity: 1; transform: translateY(0) } }
+.anim-fade { animation: w-fade-in var(--w-dur-base) ease both; }
+.anim-rise { animation: w-rise var(--w-dur-modal) var(--w-ease) both; }
+.anim-menu { animation: w-menu-in var(--w-dur-fast) var(--w-ease) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade, .anim-rise, .anim-menu { animation: none; }
+  * { transition: none !important; }
+}

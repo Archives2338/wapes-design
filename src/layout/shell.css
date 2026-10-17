@@ -1,0 +1,59 @@
+.shell { display: flex; flex-wrap: wrap; align-items: stretch; min-height: 100vh; }
+
+.sidebar {
+  flex: 1 1 248px; min-width: 0;
+  border-right: 1px solid var(--w-border);
+  padding: 24px 16px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 8px; }
+.brand__mark { width: 28px; height: 28px; border-radius: var(--w-r-sm); display: block; flex-shrink: 0; }
+.brand__name { font-size: 15.5px; font-weight: 600; letter-spacing: -.012em; }
+
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.nav-item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 9px 10px; min-height: 40px;
+  border-radius: var(--w-r-sm); color: var(--w-ink-2);
+  transition: background-color var(--w-dur-fast) ease, color var(--w-dur-fast) ease;
+}
+.nav-item:hover { background: var(--w-sunk); filter: none; }
+/* Activo: fondo neutro, tinta normal, peso 500. NO verde (spec §1). */
+.nav-item[aria-current="page"] { background: var(--w-sunk); color: var(--w-ink); font-weight: 500; }
+.nav-item svg { color: var(--w-ink-3); }
+.nav-item[aria-current="page"] svg { color: var(--w-ink); stroke-width: 1.7; }
+
+/* Pie de la barra: idioma + chip de cuenta. margin-top auto funciona porque .shell estira */
+.sidebar__foot { margin-top: auto; display: flex; flex-direction: column; gap: 6px; }
+.account { position: relative; }
+.account__chip {
+  width: 100%; display: flex; align-items: center; gap: 10px;
+  min-height: 48px; padding: 8px 10px;
+  border: 1px solid var(--w-border); border-radius: var(--w-r-md);
+  background: transparent; font: inherit; text-align: left; cursor: pointer; color: var(--w-ink);
+  transition: background-color var(--w-dur-fast) ease, border-color var(--w-dur-fast) ease;
+}
+.account__chip[aria-expanded="true"] { background: var(--w-sunk); border-color: var(--w-border-strong); }
+.account__text { min-width: 0; flex: 1 1 auto; }
+.account__name { display: block; font-size: 13px; font-weight: 500; color: var(--w-ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.account__plan { display: block; font-size: var(--w-text-xs); color: var(--w-ink-3); }
+.account__chip > svg { color: var(--w-ink-3); }
+.avatar {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--w-sunk);
+  border: 1px solid var(--w-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 500; color: var(--w-ink-2); flex-shrink: 0;
+}
+
+.main { flex: 999 1 560px; min-width: 0; padding: 32px 40px 48px; }
+.page-head { display: flex; flex-wrap: wrap; gap: 16px;
+  align-items: flex-end; justify-content: space-between; margin-bottom: 26px; }
+.page-head__sub { margin-top: 2px; }
+.page-head__actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+@media (max-width: 760px) {
+  .main { padding: 24px 16px 40px; }
+  .sidebar { border-right: 0; border-bottom: 1px solid var(--w-border); }
+  .sidebar__foot { margin-top: 0; }
+}

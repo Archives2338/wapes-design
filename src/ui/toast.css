@@ -1,0 +1,9 @@
+.toast-host { position: fixed; bottom: 22px; left: 0; right: 0; display: flex; justify-content: center;
+  pointer-events: none; z-index: 60; padding: 0 16px; }
+.toast {
+  display: inline-flex; align-items: center; gap: 8px; pointer-events: auto;
+  background: var(--w-ink); color: var(--w-bg);
+  border-radius: var(--w-r-md); padding: 10px 16px;
+  font-size: 13px; font-weight: 500; box-shadow: var(--w-shadow-pop);
+}
+.toast svg { color: var(--w-accent-bright); }

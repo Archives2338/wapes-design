@@ -1,0 +1,11 @@
+.meter { height: 5px; border-radius: 3px; background: var(--w-track); overflow: hidden; }
+.meter--thin { height: 4px; margin-bottom: 6px; }
+.meter__fill { height: 100%; border-radius: 3px; background: var(--w-accent); }
+/* Un medidor lleno es información, nunca un error: no se pone rojo. */
+.meter__fill--unmetered { background: var(--w-border-strong); }
+
+.bar-row { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 7px; font-size: 13px; }
+.bar-row--sm { font-size: var(--w-text-sm); }
+.bar-row__label { color: var(--w-ink-2); }
+.bar-row__value { color: var(--w-ink-2); font-weight: 500; white-space: nowrap; }
+.bar-row--sm .bar-row__value { color: var(--w-ink); }

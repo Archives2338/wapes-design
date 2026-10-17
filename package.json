@@ -1,0 +1,38 @@
+{
+  "name": "@wapes/design",
+  "version": "1.0.0",
+  "description": "Tokens, base y componentes de interfaz de Wapes. Una sola copia para el dashboard, el admin y la extensión.",
+  "repository": "github:Archives2338/wapes-design",
+  "license": "UNLICENSED",
+  "type": "module",
+  "sideEffects": ["*.css"],
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./host.css": "./host.css",
+    "./base.css": "./base.css",
+    "./ui": "./src/ui/index.ts",
+    "./layout": "./src/layout/index.ts",
+    "./package.json": "./package.json"
+  },
+  "files": ["tokens.css", "host.css", "base.css", "src", "docs", "README.md"],
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "host": "node scripts/make-host.mjs"
+  },
+  "peerDependencies": {
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3"
+  }
+}

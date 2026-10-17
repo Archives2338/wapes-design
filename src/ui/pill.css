@@ -1,0 +1,16 @@
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: var(--w-r-pill); padding: 3px 10px;
+  font-size: var(--w-text-xs); font-weight: 500; white-space: nowrap;
+  background: var(--w-sunk); color: var(--w-ink-2);
+}
+.pill--accent { background: var(--w-accent-soft); color: var(--w-accent-on-soft); }
+
+.dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+.dot--sm { width: 6px; height: 6px; }
+.dot--live { background: var(--w-accent-bright); }
+.dot--accent { background: var(--w-accent); }
+.dot--ink { background: var(--w-ink-2); }
+.dot--ink-3 { background: var(--w-ink-3); }
+.dot--warn { background: var(--w-warn); }
+.dot--danger { background: var(--w-danger); }

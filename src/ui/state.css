@@ -1,0 +1,13 @@
+.state { display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  padding: 22px 20px; }
+.state__icon { width: 34px; height: 34px; border-radius: var(--w-r-md); background: var(--w-sunk);
+  color: var(--w-ink-2); display: flex; align-items: center; justify-content: center; margin-bottom: 6px; }
+.state__title { font-weight: 500; }
+.state__body { font-size: var(--w-text-sm); color: var(--w-ink-3); max-width: 420px; }
+.state__action { margin-top: 8px; }
+.state--error .state__icon { color: var(--w-danger); }
+
+@keyframes w-pulse { 0%, 100% { opacity: .55 } 50% { opacity: 1 } }
+.skel { display: inline-block; border-radius: 6px; background: var(--w-sunk);
+  animation: w-pulse 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .skel { animation: none; } }

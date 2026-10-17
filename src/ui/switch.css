@@ -1,0 +1,11 @@
+.switch {
+  width: 46px; height: 26px; flex-shrink: 0;
+  border: 0; border-radius: var(--w-r-pill); padding: 3px; cursor: pointer;
+  display: flex; justify-content: flex-start; background: var(--w-border-strong);
+  transition: background-color .18s ease;
+}
+.switch span { width: 20px; height: 20px; border-radius: 50%; background: var(--w-surface);
+  display: block; transition: transform .18s var(--w-ease); }
+.switch[aria-checked="true"] { background: var(--w-accent); }
+.switch[aria-checked="true"] span { transform: translateX(20px); }
+.switch:disabled { opacity: .55; cursor: not-allowed; }

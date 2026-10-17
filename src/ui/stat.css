@@ -1,0 +1,10 @@
+.stat { display: flex; gap: 13px; align-items: flex-start; padding: 16px 18px; }
+.stat__icon {
+  width: 34px; height: 34px; border-radius: var(--w-r-md);
+  background: var(--w-sunk); color: var(--w-ink-2);
+  display: flex; align-items: center; justify-content: center;
+}
+.stat__body { min-width: 0; flex: 1 1 auto; }
+.stat__label { font-size: var(--w-text-sm); color: var(--w-ink-3); margin-bottom: 3px; }
+.stat__value { font-size: var(--w-text-stat); font-weight: 600; line-height: 1.25; margin-bottom: 5px; }
+.stat__sub { font-size: var(--w-text-xs); color: var(--w-ink-3); }
