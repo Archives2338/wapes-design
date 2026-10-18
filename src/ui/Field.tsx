@@ -35,14 +35,33 @@ export function Select({ label, help, id, children, ...rest }: Shared & SelectHT
   );
 }
 
-export function Textarea({ label, help, id, ...rest }: Shared & TextareaHTMLAttributes<HTMLTextAreaElement>) {
+/**
+ * `counter` pinta "n / max" alineado a la derecha, en tabulares. Es solo
+ * informativo: el tope real lo pone `maxLength` (o el servidor), no este texto.
+ */
+export function Textarea({
+  label,
+  help,
+  id,
+  counter,
+  ...rest
+}: Shared & TextareaHTMLAttributes<HTMLTextAreaElement> & { counter?: { value: number; max: number } }) {
   const auto = useId();
   const fid = id ?? auto;
   return (
     <div className="fld">
       <label className="field" htmlFor={fid}>{label}</label>
       <textarea id={fid} className="fld__control fld__control--area" {...rest} />
-      {help && <p className="field-help">{help}</p>}
+      {(help || counter) && (
+        <div className="field-foot">
+          {help ? <p className="field-help">{help}</p> : <span />}
+          {counter && (
+            <span className="field-count num" aria-live="polite">
+              {counter.value} / {counter.max}
+            </span>
+          )}
+        </div>
+      )}
     </div>
   );
 }

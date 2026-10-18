@@ -1,0 +1,26 @@
+.stepper { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 0; }
+.stepper__step { display: flex; align-items: center; flex: 1 1 0; min-width: 0; }
+.stepper__step:last-child { flex: 0 0 auto; }
+.stepper__btn {
+  display: inline-flex; align-items: center; gap: 10px; min-height: 40px; padding: 4px 6px 4px 0;
+  border: 0; border-radius: var(--w-r-sm); background: transparent; color: var(--w-ink-2);
+  font: inherit; font-weight: 500; white-space: nowrap; cursor: pointer; text-align: left;
+}
+.stepper__btn--static { cursor: default; }
+.stepper__step[data-state="current"] .stepper__btn { color: var(--w-ink); font-weight: 600; }
+.stepper__step[data-state="todo"] .stepper__btn { color: var(--w-ink-3); }
+.stepper__n {
+  display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; flex-shrink: 0;
+  border-radius: 50%; border: 1px solid var(--w-border-strong); background: var(--w-surface);
+  color: var(--w-ink-3); font-size: var(--w-text-sm); font-weight: 600;
+  transition: background-color var(--w-dur-fast) ease, border-color var(--w-dur-fast) ease, color var(--w-dur-fast) ease;
+}
+.stepper__n[data-state="done"] { background: var(--w-accent); border-color: var(--w-accent); color: var(--w-btn-solid-ink); }
+.stepper__n[data-state="current"] { border-color: var(--w-ink); color: var(--w-ink); }
+.stepper__line { flex: 1 1 0; height: 1px; background: var(--w-border-strong); margin: 0 12px; min-width: 16px; }
+
+/* En angosto, las etiquetas de los pasos no actuales se ocultan: queda el número. */
+@media (max-width: 520px) {
+  .stepper__step:not([data-state="current"]) .stepper__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .stepper__line { margin: 0 8px; }
+}

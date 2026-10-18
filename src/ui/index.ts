@@ -21,3 +21,5 @@ export { SwitchRow } from './SwitchRow';
 export { ChipToggle, ChipGroup } from './ChipToggle';
 export { SearchInput } from './SearchInput';
 export { ListRow, ListRowTitle } from './ListRow';
+export { Stepper, type Step } from './Stepper';
+export { Accordion, AccordionItem } from './Accordion';

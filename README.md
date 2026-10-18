@@ -14,7 +14,7 @@ se abre en el navegador y se compara, no se importa.
 Repo público, sin registro ni tokens. Se consume por git con un tag:
 
 ```sh
-npm install github:Archives2338/wapes-design#v1.1.0
+npm install github:Archives2338/wapes-design#v1.2.0
 ```
 
 Para actualizar, cambiar el tag en `package.json` y `npm install`. Nunca
@@ -49,7 +49,7 @@ Web: quien monta pone `data-theme` en el host según lo que detecte ahí.
 | `tokens.css` | Color, forma, tipografía y movimiento, prefijo `--w-`. Claro + oscuro (explícito y por sistema) |
 | `host.css` | Lo mismo sobre `:host` |
 | `base.css` | Reset mínimo, Figtree, `.num`, foco visible, animaciones y `prefers-reduced-motion` |
-| `ui` | Button (size sm), IconButton, Card, StatCard, Meter, Pill, Dot, Segmented, Switch, SwitchRow, ChipToggle/ChipGroup, Input/Select/Textarea, SearchInput, Table, ListRow, TabbedModal, Dialog, Popover, BarChart, SparkBars/Lines/Donut, EmptyState, Skeleton, Toast, Notice, KeyValue, Icon (set Lucide) |
+| `ui` | Button (size sm), IconButton, Card, StatCard, Meter, Pill, Dot, Segmented, Switch, SwitchRow, ChipToggle/ChipGroup, Input/Select/Textarea, SearchInput, Table, ListRow, Stepper, Accordion, TabbedModal, Dialog, Popover, BarChart, SparkBars/Lines/Donut, EmptyState, Skeleton, Toast, Notice, KeyValue, Icon (set Lucide); Textarea con contador |
 | `layout` | Shell, Sidebar, Brand, PageHead, AccountChipButton |
 
 Fuentes: la app carga Figtree (y Noto Sans Devanagari si sirve hindi) desde

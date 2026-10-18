@@ -1,0 +1,17 @@
+.accordion { display: block; }
+.accordion__item { border-top: 1px solid var(--w-border); }
+.accordion__item:first-child { border-top: 0; }
+.accordion__h { margin: 0; font: inherit; }
+.accordion__btn {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 0 20px;
+  border: 0; background: transparent; color: var(--w-ink); font: inherit; font-weight: 500; text-align: left; cursor: pointer;
+  transition: background-color var(--w-dur-fast) ease;
+}
+.accordion__btn:hover { background: var(--w-sunk); }
+.accordion__title { flex: 1 1 auto; min-width: 0; }
+.accordion__meta { flex: 0 0 auto; display: inline-flex; }
+.accordion__chev { color: var(--w-ink-3); flex-shrink: 0; transition: transform var(--w-dur-base) var(--w-ease); }
+.accordion__item[data-open] .accordion__chev { transform: rotate(180deg); }
+.accordion__panel { padding: 4px 20px 18px 48px; animation: w-fade-in var(--w-dur-fast) ease; }
+@media (prefers-reduced-motion: reduce) { .accordion__panel { animation: none; } }
+@media (max-width: 520px) { .accordion__btn { padding: 0 14px; } .accordion__panel { padding: 4px 14px 16px 14px; } }
